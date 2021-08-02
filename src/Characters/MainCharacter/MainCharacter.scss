@@ -1,8 +1,35 @@
 .main-character {
-    width: 50px;
-    height: 50px;
-    background-color: black;
+    width: calc(32 * var(--pixel-size));
+    height: calc(32 * var(--pixel-size));
     position: absolute;
     top: 0;
     left: 0;
+    overflow: hidden;
+}
+
+.character-spreadsheet {
+    width: calc(128 * var(--pixel-size));
+    animation: moveSpriteSheet 1s steps(4) infinite;
+    position: absolute;
+}
+
+.face-up {
+    top: calc(-32 * var(--pixel-size));
+}
+
+.face-left {
+    top: calc(-64 * var(--pixel-size));
+}
+
+ .face-right {
+    top: calc(-96 * var(--pixel-size));
+}
+
+@keyframes moveSpriteSheet {
+    from {
+        transform: translate3d(0px,0,0);
+    }
+    to {
+        transform: translate3d(-100%,0,0);
+    }
 }
